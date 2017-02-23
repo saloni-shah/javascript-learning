@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Javascript Modules</title>
+</head>
+<body>
+
+<h1>Javascript Modules</h1>
+<div id="message">Messages will appear here</div>
+<script src="module.js"></script>
+<script>
+Lib.output.clear();
+Lib.output.write("This is first message.");
+Lib.output.$("This is second message.");
+Lib.output.setColor("blue");
+Lib.output.write("This is a message after changed color.");
+//because it's not returned in module.js so will give an error.....
+//var x = Lib.output.formatMessage("This is for testing...");
+//Lib.output.write(x);
+</script>
+</body>
+</html>

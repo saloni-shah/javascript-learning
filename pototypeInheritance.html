@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Object Literal</title>
+</head>
+<body>
+
+<h1>Object Literal</h1>
+<div id="message"></div>
+<script>
+var msg = document.getElementById("message");
+//object constructor(car constructor)
+function carConstructor(make,model,color){
+	this.make = make || "unknown";
+	this.model = model || "unknown";
+	this.color = color || "unknown";
+}
+//Change properties and run methods
+//carConstructor.prototype.display = function(){
+Object.prototype.display = function(){
+	msg.innerHTML += "<p><b>Your car is a "+this.color+" "+this.make+" "+this.model+".</b></p>";
+}
+//Create Objects
+var c1 = new carConstructor("ford","mustang","blue");
+var c2 = new carConstructor("ford","bmw","green");
+var c3 = new carConstructor("odi","zzz","red");
+c3.color="violet";
+//c1.display = function(){msg.innerHTML += "<p><b>Not telling...</b></p>";}
+c1.display();
+c2.display();
+c3.display();
+
+
+var o = {}; 
+o.display();
+msg.innerHTML += "===============================";
+String.prototype.reverse = function(){
+	return this.split("").reverse().join("");
+};
+var s = "reverse me";
+alert(s + "\n" + s.reverse());
+</script>
+
+</body>
+</html>
